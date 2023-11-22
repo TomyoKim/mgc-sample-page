@@ -129,6 +129,10 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# 로그인 URL: @login_required 가 있는 경우 해당 링크로 강제 이동
+LOGIN_URL = "/login"
+LOGOUT_UTL = "/logout"
+
 # 사용자 인증 모델 커스텀
 AUTH_USER_MODEL = "user_auth.User"
 

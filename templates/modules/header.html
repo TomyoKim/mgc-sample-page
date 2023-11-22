@@ -23,10 +23,17 @@
                 <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
             </form>
 
-            <div class="text-end">
-                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='{% url 'user_auth:login' %}'">Login</button>
-                <button type="button" class="btn btn-warning" onclick="window.location.href='{% url 'user_auth:signup' %}'">Sign-up</button>
-            </div>
+            {% if user.is_authenticated %}
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='{% url 'user_auth:logout' %}'">Logout</button>
+                    <button type="button" class="btn btn-warning" onclick="window.location.href='{% url 'user_auth:signup' %}'">{{ user.username }}</button>
+                </div>
+            {% else %}
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='{% url 'user_auth:login' %}'">Login</button>
+                    <button type="button" class="btn btn-warning" onclick="window.location.href='{% url 'user_auth:signup' %}'">Sign-up</button>
+                </div>
+            {% endif %}
         </div>
     </div>
 </header>
