@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    {% include "modules/bootstrap.html" %}
+</head>
+{% include "modules/custom_style.html" %}
+<body>
+    <div class="modal modal-sheet d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-4 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h1 class="fw-bold mb-0 fs-2">Sign up</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body p-5 pt-0">
+                <form class="" action="{% url 'user_auth:signup' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control rounded-3 {{ valid }}" id="id_email" name="email" value="{{ data.email }}" placeholder="email@domain.com">
+                        <label for="id_email">이메일</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control rounded-3 {{ valid }}" id="id_password1" name="password" placeholder="패스워드">
+                        <label for="id_password1">패스워드</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control rounded-3 {{ valid }}" id="id_password2" name="password" placeholder="패스워드 확인">
+                        <label for="id_password2">패스워드 확인</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control rounded-3 {{ valid }}" id="id_last_name" name="last_name" placeholder="성">
+                        <label for="id_last_name">성</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control rounded-3 {{ valid }}" id="id_first_name" name="first_name" placeholder="이름">
+                        <label for="id_first_name">이름</label>
+                    </div>
+                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">가입</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

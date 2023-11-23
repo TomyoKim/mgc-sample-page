@@ -134,7 +134,7 @@ LOGIN_URL = "/login"
 LOGOUT_UTL = "/logout"
 
 # 사용자 인증 모델 커스텀
-AUTH_USER_MODEL = "user_auth.User"
+AUTH_USER_MODEL = "user_auth.Account"
 
 AUTHENTICATION_BACKENDS = [
     "user_auth.backends.EmailAuthBackend",

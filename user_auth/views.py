@@ -3,14 +3,27 @@ from django.views import View
 from django.http import HttpRequest
 from django.contrib import auth
 
-from .models import User
+from .models import Account
 
-# Create your views here.
 class Login(View):
+    '''
+    로그인을 위한 기능이 구현되어 있습니다.
+    '''
     def get(self, request: HttpRequest):
+        '''
+        로그인 요청에 대해 관련 페이지를 제공합니다.
+        '''
+        user = request.user
+        
+        if user.is_authenticated:
+            return render(request, 'user_auth/already_logined.html')
+        
         return render(request, "user_auth/login.html")
     
     def post(self, request: HttpRequest):
+        '''
+        로그인 요청에 대해 이메일 주소와 패스워드를 확인하여 거부/승낙 처리를 합니다.
+        '''
         email = request.POST.get("email")
         password = request.POST.get("password")
         
@@ -30,7 +43,13 @@ class Login(View):
         return render(request, "user_auth/login.html", context=context)
     
 class Logout(View):
+    '''
+    로그아웃을 위한 기능이 구현되어 있습니다.
+    '''
     def get(self, request: HttpRequest):
+        '''
+        로그아웃 요청에 대해 로그아웃 처리합니다.
+        '''
         user = request.user
         
         if user.is_authenticated:
@@ -38,10 +57,25 @@ class Logout(View):
             return redirect("/")
     
 class SignUp(View):
+    '''
+    회원 가입을 위한 기능이 구현되어 있습니다.
+    '''
     def get(self, request: HttpRequest):
-        pass
+        '''
+        회원 가입 요청에 대해 관련 페이지를 제공합니다.
+        '''
+        user = request.user
+        
+        if user.is_authenticated:
+            return render(request, 'user_auth/already_logined.html')
+        
+        return render(request, "user_auth/signup.html")
     
     def post(self, request: HttpRequest):
+        '''
+        회원 가입 요청에 대해 이메일 주소와 패스워드 등의 정보를 검증 후 거부/승낙 처리를 합니다.
+        '''
+        user = Account.objects
         pass
     
 class ChangePassword(View):

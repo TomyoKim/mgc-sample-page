@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+    {% include "modules/bootstrap.html" %}
+</head>
+{% include "modules/custom_style.html" %}
+<body>
+    <div class="modal modal-sheet d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalChoice">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-3 shadow">
+            <div class="modal-body p-4 text-center">
+                <h5 class="mb-0">이미 로그인 되어 있습니다.</h5>
+                <p class="mb-0">로그아웃을 하시겠습니까?</p>
+            </div>
+            <div class="modal-footer flex-nowrap p-0">
+                <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 border-end" onclick="window.location.href='{% url 'user_auth:logout' %}'"><strong>예</strong></button>
+                <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0" onclick="history.back()">아니오</button>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
