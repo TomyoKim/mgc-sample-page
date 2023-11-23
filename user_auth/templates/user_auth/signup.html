@@ -32,11 +32,11 @@
                         <label for="id_password2">패스워드 확인</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control rounded-3 {{ valid }}" id="id_last_name" name="last_name" placeholder="성">
+                        <input type="text" class="form-control rounded-3 {{ valid }}" id="id_last_name" name="last_name" value="{{ data.last_name }}" placeholder="성">
                         <label for="id_last_name">성</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control rounded-3 {{ valid }}" id="id_first_name" name="first_name" placeholder="이름">
+                        <input type="text" class="form-control rounded-3 {{ valid }}" id="id_first_name" name="first_name" value="{{ data.first_name }}" placeholder="이름">
                         <label for="id_first_name">이름</label>
                     </div>
                     <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">가입</button>
