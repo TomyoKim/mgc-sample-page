@@ -12,8 +12,8 @@
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">어떤</a></li>
+                <li><a href="{% url 'main' %}" class="nav-link px-2 text-secondary">Home</a></li>
+                <li><a href="{% url 'attendance:index' arg %}" class="nav-link px-2 text-white">출석</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">메뉴를</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">넣어야</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">할까?</a></li>
