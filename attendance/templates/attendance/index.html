@@ -23,10 +23,31 @@
                     <div class="form-floating">
                         <textarea class="form-control" id="id_context" name="context" placeholder="내용"></textarea>
                         <label for="id_context">내용</label>
-                    <div>
+                    </div>
+                </div>
+                <div class="col-sm col-md">
+                    <div class="d-grid">
+                        <button class="btn btn-primary" type="submit">출석하기</button>
+                    </div>
                 </div>
             </div>
         </form>
+        <div class="container-fluid mt-3">
+            <table class="table table-striped">
+                <tbody>
+                    {% for d in data %}
+                        <tr class="row">
+                            <td class="align-top col-sm col-md-4">
+                                {{ d.name }}
+                            </td>
+                            <td class="col-sm col-md-8">
+                                {{ d.context|linebreaks }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </section>
 </body>
 <script type="text/javascript">
