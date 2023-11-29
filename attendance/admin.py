@@ -1,9 +1,13 @@
 from django.contrib import admin
 from .models import AttendanceModel
+from .forms import AttendanceModelForm
 
 # Register your models here.
 
 class AttendanceModelAdmin(admin.ModelAdmin):
+    # 관리자 페이지에서 사용할 폼
+    form = AttendanceModelForm
+    
     # 관리자 리스트 뷰에서 표시할 필드
     list_display = ('name', 'context')
 
