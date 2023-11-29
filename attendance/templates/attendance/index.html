@@ -8,5 +8,35 @@
 </head>
 <body>
     {% include "modules/header.html" %}
+    <section class="container px-4 py-5">
+        <h2 class="pb-2 border-bottom">출석</h2>
+        <form class="" action="{% url 'attendance:index' %}" method="POST">
+        {% csrf_token %}
+            <div class="row g-2">
+                <div class="col-sm col-md-4">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="id_name" name="name" placeholder="이름">
+                        <label for="id_name">이름</label>
+                    </div>
+                </div>
+                <div class="col-sm col-md-8">
+                    <div class="form-floating">
+                        <textarea class="form-control" id="id_context" name="context" placeholder="내용"></textarea>
+                        <label for="id_context">내용</label>
+                    <div>
+                </div>
+            </div>
+        </form>
+    </section>
 </body>
+<script type="text/javascript">
+const textarea = document.getElementById("id_context")
+
+// 글자의 크기를 측정하여 요소의 높이로 사용하는 것에 오차가 존재하기 때문에 개행이 많아질수록 공간이 크게 남는다.
+textarea.addEventListener("input", function() {
+    const lines = this.value.split("\n").length
+    const line_height = parseFloat(window.getComputedStyle(this).fontSize) * 1.5
+    this.style.height = `${line_height * lines + line_height - (lines * 2)}px` // 여기서 어떻게는 오차를 줄이기 위한 작업을 했지만 소용 없어...
+})
+</script>
 </html>
