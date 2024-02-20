@@ -14,7 +14,7 @@ class AccountManager(UserManager):
         except:
             return None
         else:
-            return super().create_user(username, email, password[0], **extra_fields)
+            return super().create_user(username, email, password, **extra_fields)
     
     def _validate_password(self, password: list):
         if len(password) != 2:
@@ -23,7 +23,7 @@ class AccountManager(UserManager):
         if password[0] != password[1]:
             raise exceptions.ValidationError("두 패스워드가 일치하지 않습니다.")
         
-        return password[0]
+        return password[0]]
 
 class Account(AbstractUser):
     """
