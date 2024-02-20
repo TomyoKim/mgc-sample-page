@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Django 4.0 버전 부터는 CSRF 기능에 ORIGIN 체크 기능이 추가되어 웹 서버가 분리되어 있는 경우
+# origin 허용 주소를 작성해줘야 함
+CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1/", "https://127.0.0.1/"]
 
 # Application definition
 
