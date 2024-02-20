@@ -23,7 +23,7 @@ class AccountManager(UserManager):
         if password[0] != password[1]:
             raise exceptions.ValidationError("두 패스워드가 일치하지 않습니다.")
         
-        return password[0]]
+        return password[0]
 
 class Account(AbstractUser):
     """
