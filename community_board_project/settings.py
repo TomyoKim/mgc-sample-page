@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-+3#l(+b#l^q4i*-6at2vde8$-d!x4r&lby1^^bmlw#w56%w8%@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # Django 4.0 버전 부터는 CSRF 기능에 ORIGIN 체크 기능이 추가되어 웹 서버가 분리되어 있는 경우
 # origin 허용 주소를 작성해줘야 함
