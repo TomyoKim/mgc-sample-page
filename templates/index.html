@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -8,5 +9,34 @@
 </head>
 <body>
     {% include "modules/header.html" %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'bs5/image/image1.png' %}" class="card-img-top" alt="Image 1">
+                    <div class="card-body">
+                        <h5 class="card-title">파커 1</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'bs5/image/image2.png' %}" class="card-img-top" alt="Image 2">
+                    <div class="card-body">
+                        <h5 class="card-title">파커 2</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'bs5/image/image3.png' %}" class="card-img-top" alt="Image 3">
+                    <div class="card-body">
+                        <h5 class="card-title">파커 3</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>
